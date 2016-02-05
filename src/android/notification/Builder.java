@@ -123,14 +123,16 @@ public class Builder {
                 .setDefaults(0)
                 .setContentTitle(options.getTitle())
                 .setContentText(options.getText())
-				.setStyle(new NotificationCompat.BigTextStyle().bigText(bigText))
                 .setNumber(options.getBadgeNumber())
                 .setTicker(options.getText())
                 .setAutoCancel(options.isAutoClear())
                 .setOngoing(options.isOngoing())
                 .setColor(options.getColor())
                 .setLights(options.getLedColor(), 100, 100);
-
+				
+		if(bigText!=null && bigText.length()>0){
+			builder.setStyle(new NotificationCompat.BigTextStyle().bigText(bigText));
+		}
         if (sound != null) {
             builder.setSound(sound);
         }
