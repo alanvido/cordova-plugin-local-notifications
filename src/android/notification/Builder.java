@@ -118,11 +118,12 @@ public class Builder {
         Uri sound     = options.getSoundUri();
         int smallIcon = options.getSmallIcon();
         NotificationCompat.Builder builder;
-
+		final String bigText=options.getBigText();
         builder = new NotificationCompat.Builder(context)
                 .setDefaults(0)
                 .setContentTitle(options.getTitle())
                 .setContentText(options.getText())
+				.setStyle(new NotificationCompat.BigTextStyle().bigText(bigText))
                 .setNumber(options.getBadgeNumber())
                 .setTicker(options.getText())
                 .setAutoCancel(options.isAutoClear())

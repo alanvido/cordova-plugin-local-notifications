@@ -163,6 +163,12 @@ public class Options {
     public String getText() {
         return options.optString("text", "");
     }
+	/**
+     * Text for the local notification when big text is available.
+     */
+    public String getBigText() {
+        return options.optString("bigText", "");
+    }
 
     /**
      * Repeat interval (day, week, month, year, aso.)
